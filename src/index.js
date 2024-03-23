@@ -4,10 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.bundle"
+
+import "react-toastify/dist/ReactToastify.css";
+import "bootstrap-icons/font/bootstrap-icons.css"
+// providers import
+import AuthProvider from './Context/AuthContext';
+import ChatProvider from './Context/ChatContext';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <ChatProvider>
+      <App />
+    </ChatProvider>
+    </AuthProvider>   
   </React.StrictMode>
 );
 
